@@ -1,28 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attendance System</title>
+    <title>GPS उपस्थिति प्रणाली (Advanced Attendance System)</title>
     <style>
-        /* पूरे पेज पर फुल स्क्रीन दिखाने के लिए स्टाइल */
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
+        /* यह स्टाइलिंग सुनिश्चित करती है कि iframe मोबाइल पर पूरी तरह से फिट हो */
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family: Arial, sans-serif; }
+        .header-bar {
+            text-align: center; 
+            padding: 15px 10px; 
+            background: #007bff; 
+            color: white; 
+            font-weight: 600;
         }
-        iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
+        #attendance-frame { 
+            width: 100%; 
+            /* 100vh - 50px (हेडर की ऊंचाई) = शेष स्क्रीन की ऊंचाई */
+            height: calc(100vh - 50px); 
+            border: none; 
+            display: block;
         }
     </style>
 </head>
 <body>
-    <iframe src="https://script.google.com/macros/s/AKfycbzCZroxfY7LCLiq3XdoJLKaS0bIN79ShKpSfeRHyiNm9Y1vmZ9gmm1JNxgCLhEy51iB3g/exec" allow="geolocation; camera; microphone"></iframe>
+    <div class="header-bar">
+        <h3>दैनिक उपस्थिति और लोकेशन ट्रैकर</h3>
+    </div>
+    
+    <iframe 
+        id="attendance-frame" 
+        src="https://script.google.com/macros/s/AKfycbwygIOvTnzdX7Z2eSMzpgu3vt4kK6JvwnwgAakPhfH4BADZUFH-N59dnyCktUBb4N9e/exec" 
+        title="Project Attendance App">
+    </iframe>
+
 </body>
 </html>
